@@ -2,7 +2,10 @@ import React,{ useState } from 'react';
 import {  StyleSheet, View , FlatList, Alert} from 'react-native';
 import AddTodo from './components/addtodo';
 import Header from './components/header'
+import SandBox from './components/sandbox';
 import TodoItem from './components/todoitem';
+
+
 
 export default function App() {
 
@@ -26,11 +29,15 @@ export default function App() {
           ]
       })
     } else {
-      Alert.alert('OOPS!','Todos must be over 3 chars long')
+      console.log('else block')
+      Alert.alert('OOPS!','Todos must be over 3 chars long',[{text:'Under Stood' , onPress:() => console.log('alert closed')}])
     }
     
   }
   return (
+    // <View style={styles.container}>
+    //   <SandBox />
+    // </View>
     <View style={styles.container}>
         <Header />
         <View style={styles.content}>
